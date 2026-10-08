@@ -17,11 +17,6 @@ add_filter('pre_get_lastpostmodified', function() {
     return gmdate('Y-m-d H:i:s');
 });
 
-add_filter('pre_as_schedule_single_action', '__return_false', 25);
-add_filter('pre_as_schedule_recurring_action', '__return_false', 25);
-add_filter('pre_as_enqueue_async_action', '__return_false', 25);
-add_filter('pre_as_schedule_cron_action', '__return_false', 25);
-
 wp_defer_term_counting(true);
 
 add_filter('query', function($query) {
