@@ -18,10 +18,10 @@ function remove_batch_endpoints($endpoints) {
 }
 add_filter('rest_endpoints', 'remove_batch_endpoints');
 
-function za_rest_index($response, $request) {
+function hide_rest_index($response, $request) {
     return new WP_REST_Response([]);
 }
-add_filter('rest_index', 'za_rest_index', 10, 2);
+add_filter('rest_index', 'hide_rest_index', 10, 2);
 
 function remove_application_passwords_from_index() {
     remove_filter('rest_index', 'rest_add_application_passwords_to_index');
