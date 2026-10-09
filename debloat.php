@@ -219,7 +219,6 @@ function debloat_admin_footer_scripts() {
 }
 add_action('admin_print_footer_scripts', 'debloat_admin_footer_scripts', 0);
 
-
 /* --- */
 
 // The remaining ones aren't worth organizing; I just traced them with Xdebug and removed everything unnecessary.
@@ -340,9 +339,7 @@ remove_action('wp_body_open', 'wp_admin_bar_render', 0);
 remove_action('wp_footer', 'wp_admin_bar_render', 1000);
 remove_action('in_admin_header', 'wp_admin_bar_render', 0);
 remove_action('admin_enqueue_scripts', 'wp_enqueue_command_palette_assets');
-remove_action('wp_head', 'wp_print_font_faces', 50);
 remove_action('admin_init', 'register_admin_color_schemes', 1);
-remove_action('admin_print_footer_scripts', '_print_emoji_detection_script');
 remove_action('template_redirect', '_wp_admin_bar_init', 0);
 remove_action('admin_init', '_wp_admin_bar_init');
 remove_action('before_signup_header', '_wp_admin_bar_init');
